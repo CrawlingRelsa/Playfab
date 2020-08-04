@@ -22,7 +22,7 @@ ReadInFolder(entryPointDir, "/* ENTRYPOINT */")
 function ReadInFolder(inputPath: string, header: string) {
     var files = fs.readdirSync(inputPath)
     fs.appendFileSync(mainFile, header + '\n\n')
-    files.forEach(file => {
+    files.forEach((file: any) => {
         fs.appendFileSync(mainFile,
             "//Data from " + file + " \n" +
             fs.readFileSync(path.resolve(inputPath, file)) + '\n\n')
